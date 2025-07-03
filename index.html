@@ -33,7 +33,7 @@
       width: 90%;
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 20px 15px;
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -44,13 +44,13 @@
     .logo {
       max-width: 500px;
       height: auto;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 10px auto;
     }
 
     h1 {
       font-size: 2.5rem;
       color: #ff0000;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,15 +59,15 @@
     }
 
     h1 img {
-      height: 150px;
+      height: 130px;
       vertical-align: middle;
     }
 
     .info-box {
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 15px;
+      padding: 10px;
       border-radius: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     p.subtitle {
@@ -87,7 +87,7 @@
       font-weight: bold;
       transition: 0.3s;
       display: inline-block;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       animation: glow 1.5s ease-in-out infinite alternate;
       box-shadow: 0 0 10px #ff0000;
     }
@@ -216,7 +216,7 @@
 
     @media (max-width: 600px) {
       h1 img {
-        height: 100px;
+        height: 90px;
       }
 
       .cta-button {
@@ -226,8 +226,6 @@
   </style>
 </head>
 <body>
-
-  <!-- POPUP -->
   <div class="popup" id="popup">
     <h2>🎉 BONUS SPESIAL 🎁</h2>
     <p>Dapatkan Bonus New Member 50% sekarang juga!</p>
@@ -283,7 +281,7 @@
     window.onload = function () {
       setTimeout(() => {
         document.getElementById("popup").style.display = "block";
-      }, 1000); // muncul 1 detik setelah load
+      }, 1000);
     };
 
     function closePopup() {
