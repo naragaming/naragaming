@@ -18,7 +18,7 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       font-size: clamp(14px, 1.2vw, 18px);
-      background-image: url('naragacor.png'); /* ganti ke link jika pakai image hosting */
+      background-image: url('naragacor.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
@@ -37,6 +37,8 @@
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
@@ -72,8 +74,6 @@
       font-size: 1.2rem;
       color: #ccc;
       font-weight: bold;
-      word-wrap: break-word;
-      max-width: 100%;
     }
 
     .cta-button {
@@ -85,13 +85,68 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: 0.3s;
       display: inline-block;
       margin-bottom: 30px;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      box-shadow: 0 0 10px #ff0000;
     }
 
     .cta-button:hover {
       background-color: #ffe600;
+      color: #000;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      }
+      to {
+        box-shadow: 0 0 20px #ffe600, 0 0 30px #ffe600;
+      }
+    }
+
+    .popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #111;
+      color: #fff;
+      border: 3px solid #ffcc00;
+      border-radius: 15px;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+      z-index: 999;
+      display: none;
+    }
+
+    .popup h2 {
+      margin-bottom: 10px;
+      color: #ffe600;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      background: #ff0000;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background: #ffe600;
+    }
+
+    .contact-section,
+    .features,
+    .footer-box {
+      z-index: 1;
     }
 
     .contact-section {
@@ -171,6 +226,14 @@
   </style>
 </head>
 <body>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <h2>🎉 BONUS SPESIAL 🎁</h2>
+    <p>Dapatkan bonus new member 100% sekarang juga!</p>
+    <button onclick="closePopup()">Tutup</button>
+  </div>
+
   <div class="container">
     <img src="NARAGAMING.png" alt="Logo Nara Gaming" class="logo" />
 
@@ -215,5 +278,17 @@
       © 2025 Nara Gaming | Situs permainan online +18
     </div>
   </div>
+
+  <script>
+    window.onload = function () {
+      setTimeout(() => {
+        document.getElementById("popup").style.display = "block";
+      }, 1000); // muncul 1 detik setelah load
+    };
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
 </body>
 </html>
